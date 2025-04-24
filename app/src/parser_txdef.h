@@ -41,7 +41,7 @@ typedef struct {
 } parser_tag_t;
 
 typedef struct {
-    parser_element_t format;        // must be 2
+    parser_element_t format;        // must be 2 (Arweave) or 9 (AO)
     parser_element_t owner;
     parser_element_t target;
     parser_element_t quantity;

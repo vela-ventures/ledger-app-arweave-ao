@@ -22,7 +22,7 @@
 
 parser_tx_t parser_tx_obj;
 
-#define CHECK_KIND(KIND, EXPECTED_KIND) \
+#define CHECK_KIND(KIND, EXPECTED_KIND) \ 
     if (KIND != EXPECTED_KIND) { return parser_rlp_error_invalid_kind; }
 
 parser_error_t parser_init_context(parser_context_t *ctx,
@@ -123,7 +123,7 @@ parser_error_t parser_readTag(parser_context_t *c, parser_tag_t *v) {
 
 parser_error_t _read(parser_context_t *c, parser_tx_t *v) {
     CHECK_PARSER_ERR(parser_readElement(c, &v->format))
-    if (v->format.len != 1 || v->format.ptr[0] != '2') {
+    if (v->format.len != 1 || v->format.ptr[0] != '2' && v->format.ptr[0] != '9') {
         return parser_unexpected_tx_version;
     }
 

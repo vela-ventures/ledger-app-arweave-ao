@@ -27,6 +27,15 @@ extern uint16_t action_addrResponseLen;
 
 __Z_INLINE void app_sign() {
     uint16_t replyLen = 0;
+
+    // TODO: Differentiate signature methods
+    // if (parser_tx_obj.format.ptr[0] == '9') {
+
+    // }
+    // else {
+        
+    // }
+
     zxerr_t err = crypto_sign(G_io_apdu_buffer, IO_APDU_BUFFER_SIZE - 3, &replyLen);
 
     if (err != zxerr_ok || replyLen == 0) {
